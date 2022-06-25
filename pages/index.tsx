@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Joaquin Candalaft portfolio</title>
         <meta name="description" content="Joaquin Candalaft" />
         <meta name="description" content="Portfolio" />
         <link rel="icon" href="/favicon.ico" />
@@ -15,7 +15,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to my portfolio!
         </h1>
 
         <p className={styles.description}>
