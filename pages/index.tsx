@@ -1,28 +1,38 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Dashboard.module.css'
 
-const Home: NextPage = () => {
+const Dashboard: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Joaquin Candalaft portfolio</title>
-        <meta name="description" content="Joaquin Candalaft" />
-        <meta name="description" content="Portfolio" />
+        <title>Joaquin Candalaft&apos;s portfolio</title>
+        <meta name="description" content="Joaquin Candalaft&apos;s portfolio" />
+        <meta name="keywords" content="Joaquin, Candalaft, portfolio, linkedin, developer" />
+        <meta name="author" content="Joaquin Candalaft" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to my portfolio!
-        </h1>
+        <div className={styles.leftColumn}>
+          <h1 className={styles.title}>
+            <span>
+              Hi!
+              <br />
+              I&apos;m Joaquin, a developer.
+            </span>
+          </h1>
+          <p className={styles.description}>
+            I&apos;m a fullstack web developer. I&apos;ve been involved in projects with lots of technologies both for work and personal purposes.
+          </p>
+        </div>
 
-        <p className={styles.description}>
-          Puto el que lee
-        </p>
+        <div className={styles.rightColumn}>
+          <Image src="/avatar.jpg" alt="Joaquin&apos;s photo" width={400} height={400} />
+        </div>
 
-        <div className={styles.grid}>
+        {/* <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Documentation &rarr;</h2>
             <p>Find in-depth information about Next.js features and API.</p>
@@ -50,23 +60,10 @@ const Home: NextPage = () => {
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
           </a>
-        </div>
+        </div> */}
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   )
-}
+};
 
-export default Home
+export default Dashboard;
