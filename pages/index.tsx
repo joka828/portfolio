@@ -27,6 +27,16 @@ const Dashboard: NextPage = () => {
           <p className={styles.description}>
             I&apos;m a fullstack web developer. I&apos;ve been involved in projects with lots of technologies both for work and personal purposes.
           </p>
+          <div className={styles.socials}>
+            <a className={styles.socialItem} href="https://www.linkedin.com/in/joaquin-candalaft-1b3933130/" target="_blank" rel="noreferrer">
+              LinkedIn
+              <Image className={styles.icon} src="/linkedin.png" alt="Linkedin logo" layout="raw" width={20} height={20} />
+            </a>
+            <a className={styles.socialItem} href="https://github.com/joka828" target="_blank" rel="noreferrer">
+              Github
+              <Image className={styles.icon} src="/github-icon.png" alt="Github logo" layout="raw" width={20} height={20} />
+            </a>
+          </div>
         </div>
 
         <div className={styles.rightColumn}>

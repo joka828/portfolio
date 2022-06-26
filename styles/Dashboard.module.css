@@ -28,7 +28,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0 4rem;
+  margin: 0 4rem;
 }
 
 .title {
@@ -44,6 +44,40 @@
   font-size: 1.5rem;
   flex-grow: 2;
   flex-shrink: 2;
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+}
+
+.socialItem {
+  border: 2px solid #fff;
+  border-radius: 32px;
+  padding: 8px 16px;
+
+  display: flex;
+  flex-direction: row;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.socialItem:hover {
+  background-color: #fff;
+  color: #222;
+}
+
+.socialItem .icon {
+  display: flex;
+  margin-left: 6px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.socialItem + .socialItem {
+  margin-left: 12px;
 }
 
 .rightColumn {
