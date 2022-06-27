@@ -88,6 +88,13 @@
   border-radius: 50%;
 }
 
+.wipDisclaimer{
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  font-size: 12px;
+}
+
 .code {
   background: #fafafa;
   border-radius: 5px;

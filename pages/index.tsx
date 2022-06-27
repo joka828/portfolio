@@ -43,6 +43,10 @@ const Dashboard: NextPage = () => {
           <Image src="/avatar.jpg" alt="Joaquin&apos;s photo" width={400} height={400} />
         </div>
 
+        <span className={styles.wipDisclaimer}>
+          This portfolio is a work in progress. More coming soon!
+        </span>
+
         {/* <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Documentation &rarr;</h2>
