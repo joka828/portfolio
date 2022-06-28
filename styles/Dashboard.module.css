@@ -1,26 +1,11 @@
-.container {
-  padding: 0 6rem;
-}
-
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 4rem 6rem;
   flex: 1;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
 }
 
 .leftColumn {
@@ -31,7 +16,16 @@
   margin-right: 4rem;
 }
 
+.avatar {
+  border-radius: 50%;
+}
+
+.leftColumn .avatarWrapper {
+  display: none;
+}
+
 .title {
+  margin: 0;
   line-height: 1.15;
   font-size: 5rem;
   display: flex;
@@ -84,11 +78,7 @@
   flex-grow: 1;
 }
 
-.rightColumn img {
-  border-radius: 50%;
-}
-
-.wipDisclaimer{
+.wipDisclaimer {
   position: absolute;
   left: 10px;
   bottom: 10px;
@@ -104,9 +94,54 @@
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+@media (max-width: 1024px) {
+  .main {
+    padding: 2rem 2rem;
+  }
+
+  .leftColumn {
+    flex-shrink: 1;
+    margin-right: 2rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .description {
+    line-height: 1.5;
+    font-size: 1rem;
   }
 }
+
+@media (max-width: 768px) {
+  .main {
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .leftColumn {
+    width: 100%;
+    margin-right: 0;
+    align-items: center;
+  }
+
+  .leftColumn .avatarWrapper {
+    display: block;
+    margin-top: 1rem;
+  }
+
+  .rightColumn {
+    display: none;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+
+  .wipDisclaimer {
+    position: static;
+    margin-top: 1rem;
+  }
+}
+

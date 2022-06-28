@@ -5,7 +5,7 @@ import styles from '../styles/Dashboard.module.css'
 
 const Dashboard: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Joaquin Candalaft&apos;s portfolio</title>
         <meta name="description" content="Joaquin Candalaft&apos;s portfolio" />
@@ -24,9 +24,17 @@ const Dashboard: NextPage = () => {
               I&apos;m Joaquin, a developer.
             </span>
           </h1>
+
+          {/* Only displayed on mobile */}
+          <div className={styles.avatarWrapper}>
+            <Image className={styles.avatar} src="/avatar.jpg" alt="Joaquin&apos;s photo" width={150} height={150} />
+          </div>
+          {/* Only displayed on mobile */}
+
           <p className={styles.description}>
             I&apos;m a fullstack web developer. I&apos;ve been involved in projects with lots of technologies both for work and personal purposes.
           </p>
+
           <div className={styles.socials}>
             <a className={styles.socialItem} href="https://www.linkedin.com/in/joaquin-candalaft-1b3933130/" target="_blank" rel="noreferrer">
               LinkedIn
@@ -40,7 +48,7 @@ const Dashboard: NextPage = () => {
         </div>
 
         <div className={styles.rightColumn}>
-          <Image src="/avatar.jpg" alt="Joaquin&apos;s photo" width={400} height={400} />
+          <Image className={styles.avatar} src="/avatar.jpg" alt="Joaquin&apos;s photo" width={400} height={400} />
         </div>
 
         <span className={styles.wipDisclaimer}>
