@@ -69,6 +69,10 @@
 }
 
 @media (max-width: 768px) {
+  .topbar {
+    -webkit-tap-highlight-color: transparent;
+  }
+
   .layout main {
     padding-top: 1rem;
   }
