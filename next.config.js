@@ -6,6 +6,15 @@ const nextConfig = {
       layoutRaw: true,
     },
   },
+  async redirects() {
+    return [
+      {
+        source: "/_error",
+        destination: "/",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
