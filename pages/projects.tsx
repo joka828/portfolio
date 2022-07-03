@@ -16,7 +16,7 @@ const HomeProjects: NextPage = () => {
       </Head> */}
 
       <main className={styles.main}>
-        HomeProjects route
+        Coming soon!
       </main>
     </>
   )

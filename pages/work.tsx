@@ -16,7 +16,7 @@ const Work: NextPage = () => {
       </Head> */}
 
       <main className={styles.main}>
-        work route
+        Coming soon!
       </main>
     </>
   )
