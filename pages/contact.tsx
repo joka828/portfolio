@@ -1,7 +1,5 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Dashboard.module.css'
+import styles from '../styles/Contact.module.css'
 
 const Contact: NextPage = () => {
   return (
@@ -16,7 +14,17 @@ const Contact: NextPage = () => {
       </Head> */}
 
       <main className={styles.main}>
-        <span>Reach to me at <b>joaquin.candalaft@gmail.com</b></span>
+        <div className={styles.section}>
+          <span>Reach to me at <b>joaquin.candalaft@gmail.com</b></span>
+        </div>
+        <div className={styles.section}>
+          Also, you can{' '}
+          <a href="/resume.pdf" target="_blank" >
+            <b className={styles.resumeLink}>
+              download my resume
+            </b>
+          </a>
+        </div>
       </main>
     </>
   )

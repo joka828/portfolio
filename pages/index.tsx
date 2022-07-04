@@ -34,7 +34,7 @@ const Dashboard: NextPage = () => {
           </p>
 
           <div className={styles.socials}>
-            <a className={styles.socialItem} href="https://www.linkedin.com/in/joaquin-candalaft-1b3933130/" target="_blank" rel="noreferrer">
+            <a className={styles.socialItem} href="https://www.linkedin.com/in/joaquin-candalaft/" target="_blank" rel="noreferrer">
               LinkedIn
               <Image className={styles.icon} src="/linkedin.png" alt="Linkedin logo" layout="raw" width={20} height={20} />
             </a>
