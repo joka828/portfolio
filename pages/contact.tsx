@@ -18,10 +18,10 @@ const Contact: NextPage = () => {
           <span>Reach to me at <b>joaquin.candalaft@gmail.com</b></span>
         </div>
         <div className={styles.section}>
-          Also, you can{' '}
+          You can also{' '}
           <a href="/resume.pdf" target="_blank" >
             <b className={styles.resumeLink}>
-              download my resume
+              download my resume!
             </b>
           </a>
         </div>
