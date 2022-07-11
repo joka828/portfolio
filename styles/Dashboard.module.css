@@ -92,7 +92,7 @@
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px), screen and (max-height: 700px) {
   .leftColumn {
     flex-shrink: 1;
     margin-right: 2rem;
@@ -108,7 +108,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .main {
     text-align: center;
     flex-direction: column;

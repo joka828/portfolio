@@ -19,7 +19,7 @@ const Contact: NextPage = () => {
         </div>
         <div className={styles.section}>
           You can also{' '}
-          <a href="/resume.pdf" target="_blank" >
+          <a href="/resume.pdf" target="_blank" rel="noreferrer">
             <b className={styles.resumeLink}>
               download my resume!
             </b>

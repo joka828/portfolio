@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../../styles/Dashboard.module.css'
+import styles from '../../styles/Work.module.css'
 
 const Work: NextPage = () => {
   return (
@@ -16,7 +16,18 @@ const Work: NextPage = () => {
       </Head> */}
 
       <main className={styles.main}>
-        Coming soon!
+        <span>
+          Coming soon!
+        </span>
+        <br />
+        <div>
+          You can also{' '}
+          <a href="/resume.pdf" target="_blank" rel="noreferrer">
+            <b className={styles.resumeLink}>
+              download my resume!
+            </b>
+          </a>
+        </div>
       </main>
     </>
   )

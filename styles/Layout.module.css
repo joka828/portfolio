@@ -1,10 +1,20 @@
-.layout {
+.layoutWrapper {
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
+
+  position: relative;
+}
+
+.layout {
+  height: 100%;
+  width: 100%;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  z-index: 10;
 }
 
 .topbar {
@@ -56,19 +66,59 @@
 }
 
 .layout main {
-  padding: 4rem;
+  padding: 2rem 4rem;
   height: calc(100% - 4rem);
   width: 100%;
 }
 
+.backgroundDecorator {
+  height: 900vh;
+  width: 100vw;
+  background-color: #c60;
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  transition: all 1.5s ease-out;
+}
 
-@media (max-width: 1024px) {
+.leftBackgroundDecorator {
+  transform: rotate(300deg);
+  right: 20%;
+  transform-origin: bottom right;
+}
+
+.leftBackgroundDecorator.hiddenLeftBackgroundDecorator {
+  transform: rotate(240deg);
+  opacity: 0;
+}
+
+.rightBackgroundDecorator {
+  transform: rotate(60deg);
+  left: 20%;
+  transform-origin: bottom left;
+}
+
+.rightBackgroundDecorator.hiddenRightBackgroundDecorator {
+  transform: rotate(130deg);
+  opacity: 0;
+}
+
+
+@media screen and (max-width: 1024px) {
   .layout main {
-    padding: 2rem 2rem;
+    padding: 2rem;
+  }
+
+  .leftBackgroundDecorator {
+    transform: rotate(310deg);
+  }
+  
+  .rightBackgroundDecorator {
+    transform: rotate(50deg);
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .topbar {
     -webkit-tap-highlight-color: transparent;
   }
@@ -79,6 +129,14 @@
 
   .topbarItem { 
     font-size: 0.8rem;
-    margin: 0 0.8rem;
+    margin: 0 0.6rem;
+  }
+
+  .leftBackgroundDecorator {
+    transform: rotate(330deg);
+  }
+  
+  .rightBackgroundDecorator {
+    transform: rotate(30deg);
   }
 }
