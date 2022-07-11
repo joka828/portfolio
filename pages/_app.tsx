@@ -2,7 +2,6 @@ import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Head from 'next/head'
-import { useMemo } from 'react'
 
 import styles from '../styles/Layout.module.css'
 import '../styles/globals.css'
@@ -29,18 +28,7 @@ const TOPBAR_ITEMS = [
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  const firstPathParam = router.pathname.slice(1).split('/')[0];
-
-  const decoratorClasses = useMemo(() => {
-    const classes = [];
-    if (firstPathParam) {
-      classes.push(styles.decoratorLeft);
-    } else {
-      classes.push(styles.decoratorRight);
-    }
-
-    return classes.join(' ');
-  }, [firstPathParam]);
+  const firstPathParameter = router.pathname.slice(1).split('/')[0];
 
   return (
     <>
@@ -62,7 +50,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                   href={`/${item.path}`}
                 >
                   <span
-                    className={`${styles.topbarItem} ${firstPathParam === item.path ? styles.highlighted : ''}`}
+                    className={`${styles.topbarItem} ${firstPathParameter === item.path ? styles.highlighted : ''}`}
                   >
                     {item.text}
                     <div className={styles.underlineWrapper}>
@@ -75,8 +63,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           </div>
           <Component {...pageProps} />
         </div>
-        <div className={`${styles.backgroundDecorator} ${styles.leftBackgroundDecorator} ${!firstPathParam ? styles.hiddenLeftBackgroundDecorator : ''}`}/>
-        <div className={`${styles.backgroundDecorator} ${styles.rightBackgroundDecorator} ${firstPathParam ? styles.hiddenRightBackgroundDecorator : ''}`}/>
+        <div className={`${styles.backgroundDecoratorWrapper}`}>
+          <div className={`${styles.backgroundDecorator} ${firstPathParameter ? styles.leftSideBackgroundDecorator : styles.rightSideBackgroundDecorator}`}/>
+        </div>
       </div>
     </>
   );
