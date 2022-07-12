@@ -68,7 +68,7 @@ const Portfolio: NextPage = () => {
             <Image 
               className={styles.projectImage}
               src="/screenshots/portfolio-seo.png"
-              alt="SEO code screenshot"
+              alt="Portfolio SEO code screenshot"
               layout="raw"
               width={534}
               height={300}

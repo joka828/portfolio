@@ -83,15 +83,6 @@
   font-size: 12px;
 }
 
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
 @media screen and (max-width: 1024px), screen and (max-height: 700px) {
   .leftColumn {
     flex-shrink: 1;

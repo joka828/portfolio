@@ -1,9 +1,39 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { useMemo } from 'react'
+import { capitalize } from '../helpers'
 import styles from '../styles/Dashboard.module.css'
 
-const Dashboard: NextPage = () => {
+interface Props {
+  lastCommit: {
+    date: Date;
+    message: string;
+  }
+};
+
+export const getStaticProps = async () => {
+  const lastCommitFetch = await fetch('https://api.github.com/repos/joka828/portfolio/commits/master');
+  const lastCommit = (await lastCommitFetch.json()).commit
+
+  return {
+    props: {
+      lastCommit: {
+        date: lastCommit.committer.date,
+        message: lastCommit.message,
+      }
+    },
+  };
+}
+
+const Dashboard: NextPage<Props> = ({ lastCommit }) => {
+
+  const parsedDate = useMemo(() => {
+    const date = new Date(lastCommit.date);
+    const month = date.toLocaleString('default', { month: 'short' });
+    return `${date.getDate()}-${month}-${date.getFullYear()}`
+  }, [lastCommit]);
+
   return (
     <>
       <Head>
@@ -49,6 +79,8 @@ const Dashboard: NextPage = () => {
 
         <span className={styles.wipDisclaimer}>
           This portfolio is a work in progress. More coming soon!
+          <br />
+          Last update on {parsedDate}: {capitalize(lastCommit.message)}
         </span>
       </main>
     </>
