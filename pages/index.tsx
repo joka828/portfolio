@@ -13,7 +13,14 @@ interface Props {
 };
 
 export const getStaticProps = async () => {
-  const lastCommitFetch = await fetch('https://api.github.com/repos/joka828/portfolio/commits/master');
+  const lastCommitFetch = await fetch(
+    'https://api.github.com/repos/joka828/portfolio/commits/master',
+    {
+      method: 'GET',
+      headers: {"Authorization": `token ${process.env.GITHUB_ACCESS_TOKEN}`}
+    }
+  );
+
   const lastCommit = (await lastCommitFetch.json()).commit
 
   return {

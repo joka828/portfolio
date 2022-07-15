@@ -2,6 +2,7 @@ import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Head from 'next/head'
+import { TrackingHeadScript } from "@phntms/react-gtm";
 
 import styles from '../styles/Layout.module.css'
 import '../styles/globals.css'
@@ -37,6 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="author" content="Joaquin Candalaft" />
         <meta property="og:image" content="https://joaquincandalaft.com/avatar.jpg" />
         <link rel="icon" href="/favicon.ico" />
+        {process.env.NODE_ENV === 'production' && <TrackingHeadScript id={'G-HG39STDYK3'} />}
       </Head>
 
       <div className={styles.layoutWrapper}>
