@@ -1,7 +1,9 @@
 import type { NextPage } from 'next'
+import { useMemo } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
-import { useMemo } from 'react'
+import { trackEvent } from "@phntms/react-gtm";
+
 import { capitalize } from '../helpers'
 import styles from '../styles/Dashboard.module.css'
 
@@ -31,6 +33,12 @@ export const getStaticProps = async () => {
       }
     },
   };
+}
+
+const linkedinTracking = () => {
+  trackEvent({
+    event: "open_linkedin",
+  });
 }
 
 const Dashboard: NextPage<Props> = ({ lastCommit }) => {
@@ -67,7 +75,13 @@ const Dashboard: NextPage<Props> = ({ lastCommit }) => {
           </p>
 
           <div className={styles.socials}>
-            <a className={styles.socialItem} href="https://www.linkedin.com/in/joaquin-candalaft/" target="_blank" rel="noreferrer">
+            <a 
+              onClick={linkedinTracking}
+              className={styles.socialItem}
+              href="https://www.linkedin.com/in/joaquin-candalaft/"
+              target="_blank"
+              rel="noreferrer"
+            >
               LinkedIn
               <Image className={styles.icon} src="/linkedin.png" alt="Linkedin logo" layout="raw" width={20} height={20} />
             </a>

@@ -43,7 +43,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       <div className={styles.layoutWrapper}>
         <div className={styles.layout}>
-          {/* TO DO: make it responsive */}
+          {/* TO DO: make the topbar actually responsive (maybe a burger) */}
           <div className={styles.topbar}>
             {
               TOPBAR_ITEMS.map((item) =>
