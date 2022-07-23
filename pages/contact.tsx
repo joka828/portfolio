@@ -1,4 +1,6 @@
 import type { NextPage } from 'next'
+
+import { downloadCVTracking } from '../helpers/trackings';
 import styles from '../styles/Contact.module.css'
 
 const Contact: NextPage = () => {
@@ -19,7 +21,7 @@ const Contact: NextPage = () => {
         </div>
         <div className={styles.section}>
           You can also{' '}
-          <a href="/resume.pdf" target="_blank" rel="noreferrer">
+          <a href="/resume.pdf" target="_blank" rel="noreferrer" onClick={downloadCVTracking}>
             <b className={styles.resumeLink}>
               download my resume!
             </b>

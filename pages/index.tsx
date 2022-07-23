@@ -2,9 +2,9 @@ import type { NextPage } from 'next'
 import { useMemo } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
-import { trackEvent } from "@phntms/react-gtm";
 
 import { capitalize } from '../helpers'
+import { linkedinLinkTracking, githubLinkTracking } from '../helpers/trackings'
 import styles from '../styles/Dashboard.module.css'
 
 interface Props {
@@ -33,12 +33,6 @@ export const getStaticProps = async () => {
       }
     },
   };
-}
-
-const linkedinTracking = () => {
-  trackEvent({
-    event: "open_linkedin",
-  });
 }
 
 const Dashboard: NextPage<Props> = ({ lastCommit }) => {
@@ -75,8 +69,8 @@ const Dashboard: NextPage<Props> = ({ lastCommit }) => {
           </p>
 
           <div className={styles.socials}>
-            <a 
-              onClick={linkedinTracking}
+            <a
+              onClick={linkedinLinkTracking}
               className={styles.socialItem}
               href="https://www.linkedin.com/in/joaquin-candalaft/"
               target="_blank"
@@ -85,7 +79,13 @@ const Dashboard: NextPage<Props> = ({ lastCommit }) => {
               LinkedIn
               <Image className={styles.icon} src="/linkedin.png" alt="Linkedin logo" layout="raw" width={20} height={20} />
             </a>
-            <a className={styles.socialItem} href="https://github.com/joka828" target="_blank" rel="noreferrer">
+            <a
+              onClick={githubLinkTracking}
+              className={styles.socialItem}
+              href="https://github.com/joka828"
+              target="_blank"
+              rel="noreferrer"
+            >
               Github
               <Image className={styles.icon} src="/github-icon.png" alt="Github logo" layout="raw" width={20} height={20} />
             </a>

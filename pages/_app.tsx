@@ -2,8 +2,9 @@ import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Head from 'next/head'
-import { TrackingHeadScript } from "@phntms/react-gtm";
+import { useEffect } from 'react'
 
+import { visitTracking, initiliazeUserId } from '../helpers/trackings'
 import styles from '../styles/Layout.module.css'
 import '../styles/globals.css'
 
@@ -31,6 +32,13 @@ function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const firstPathParameter = router.pathname.slice(1).split('/')[0];
 
+  useEffect(() => {
+    initiliazeUserId();
+    if (process.env.NODE_ENV !== 'development') {
+      visitTracking(firstPathParameter || 'dashboard');
+    }
+  }, []);
+
   return (
     <>
       <Head>
@@ -38,7 +46,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="author" content="Joaquin Candalaft" />
         <meta property="og:image" content="https://joaquincandalaft.com/avatar.jpg" />
         <link rel="icon" href="/favicon.ico" />
-        {process.env.NODE_ENV === 'production' && <TrackingHeadScript id={'G-HG39STDYK3'} />}
       </Head>
 
       <div className={styles.layoutWrapper}>

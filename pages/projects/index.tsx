@@ -2,6 +2,8 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link';
+
+import { openProjectDetailTracking } from '../../helpers/trackings';
 import styles from '../../styles/Projects.module.css'
 
 const HomeProjects: NextPage = () => {
@@ -14,7 +16,7 @@ const HomeProjects: NextPage = () => {
 
       <main className={styles.main}>
         <Link className={styles.section} href="/projects/portfolio">
-          <div className={styles.section}>
+          <div className={styles.section} onClick={openProjectDetailTracking('portfolio')}>
             <span className={styles.title}>
               Portfolio
             </span>
@@ -28,7 +30,7 @@ const HomeProjects: NextPage = () => {
           </div>
         </Link>
         <Link className={styles.section} href="/projects/casino">
-          <div className={styles.section}>
+          <div className={styles.section} onClick={openProjectDetailTracking('casino')}>
             <span className={styles.title}>
               Mazmo Casino
             </span>
@@ -45,7 +47,7 @@ const HomeProjects: NextPage = () => {
           </div>
         </Link>
         <Link className={styles.section} href="/projects/sprinklers">
-          <div className={styles.section}>
+          <div className={styles.section} onClick={openProjectDetailTracking('sprinklers')}>
             <span className={styles.title}>
               Automatic sprinklers
             </span>

@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
+
+import { downloadCVTracking } from '../../helpers/trackings';
 import styles from '../../styles/Work.module.css'
 
 const Work: NextPage = () => {
@@ -22,7 +22,7 @@ const Work: NextPage = () => {
         <br />
         <div>
           You can also{' '}
-          <a href="/resume.pdf" target="_blank" rel="noreferrer">
+          <a href="/resume.pdf" target="_blank" rel="noreferrer" onClick={downloadCVTracking}>
             <b className={styles.resumeLink}>
               download my resume!
             </b>
