@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import { useMemo } from 'react'
 import Head from 'next/head'
-import Image from 'next/image'
+import Image from 'next/future/image'
 
 import { capitalize } from '../helpers'
 import { linkedinLinkTracking, githubLinkTracking } from '../helpers/trackings'
@@ -19,7 +19,7 @@ export const getStaticProps = async () => {
     'https://api.github.com/repos/joka828/portfolio/commits/master',
     {
       method: 'GET',
-      headers: {"Authorization": `token ${process.env.GITHUB_ACCESS_TOKEN}`}
+      headers: { "Authorization": `token ${process.env.GITHUB_ACCESS_TOKEN}` }
     }
   );
 
@@ -77,7 +77,7 @@ const Dashboard: NextPage<Props> = ({ lastCommit }) => {
               rel="noreferrer"
             >
               LinkedIn
-              <Image className={styles.icon} src="/linkedin.png" alt="Linkedin logo" layout="raw" width={20} height={20} />
+              <Image className={styles.icon} src="/linkedin.png" alt="Linkedin logo" width={20} height={20} />
             </a>
             <a
               onClick={githubLinkTracking}
@@ -87,7 +87,7 @@ const Dashboard: NextPage<Props> = ({ lastCommit }) => {
               rel="noreferrer"
             >
               Github
-              <Image className={styles.icon} src="/github-icon.png" alt="Github logo" layout="raw" width={20} height={20} />
+              <Image className={styles.icon} src="/github-icon.png" alt="Github logo" width={20} height={20} />
             </a>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
+import Image from 'next/future/image'
 import Link from 'next/link'
 import BackButton from '../../../components/backButton'
 import styles from '../../../styles/Project.module.css'
@@ -40,16 +40,15 @@ const Portfolio: NextPage = () => {
               className={styles.projectImage}
               src="/screenshots/portfolio-dashboard.png"
               alt="Portfolio dashboard screenshot"
-              layout="raw"
               width={534}
               height={300}
             />
           </div>
           <div className={styles.section}>
             <span className={styles.sectionText}>
-            <b>It features full responsiveness</b>, implemented with with media-queries with breakpoints at 1024px and 768px for mobile devices.
+              <b>It features full responsiveness</b>, implemented with with media-queries with breakpoints at 1024px and 768px for mobile devices.
             </span>
-            <video 
+            <video
               className={styles.projectImage}
               loop
               muted
@@ -65,11 +64,10 @@ const Portfolio: NextPage = () => {
               <br />
               You can try <a className={styles.googleLink} href="https://www.google.com/search?q=joaquin+candalaft">Googling me</a>.
             </span>
-            <Image 
+            <Image
               className={styles.projectImage}
               src="/screenshots/portfolio-seo.png"
               alt="Portfolio SEO code screenshot"
-              layout="raw"
               width={534}
               height={300}
             />
@@ -78,11 +76,10 @@ const Portfolio: NextPage = () => {
             <span className={styles.sectionText}>
               It is integrated with Vercel <b>CI-CD</b>. With just a push on my github repo, the deploy is up and ready within 20 to 30 seconds.
             </span>
-            <Image 
+            <Image
               className={styles.projectImage}
               src="/screenshots/portfolio-cicd.png"
               alt="Vercel CICD screenshot"
-              layout="raw"
               width={534}
               height={300}
             />

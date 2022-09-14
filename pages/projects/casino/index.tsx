@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
+import Image from 'next/future/image'
 import Link from 'next/link';
 import BackButton from '../../../components/backButton';
 import styles from '../../../styles/Project.module.css'
@@ -14,7 +14,7 @@ const Casino: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <BackButton 
+        <BackButton
           url="/projects"
           sectionName='Projects'
           className={styles.backButton}
@@ -40,11 +40,10 @@ const Casino: NextPage = () => {
               <br />
               Later on, I asked Mazmo&apos;s creator to add an iframe to the chat to be able to provide a visual, much more comfortable UX.
             </span>
-            <Image 
+            <Image
               className={styles.projectImage}
               src="/screenshots/casino-dashboard.png"
               alt="casino screenshot"
-              layout="raw"
               width={384}
               height={300}
             />

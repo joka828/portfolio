@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { useRouter } from 'next/router'
-import Image from 'next/image';
+import Image from 'next/future/image';
 import Link from 'next/link';
 
 import styles from './styles.module.css'
@@ -14,7 +14,7 @@ interface Props {
 }
 
 const BackButton: React.FunctionComponent<Props> = ({ className, sectionName, url }) => {
-  
+
   const router = useRouter();
   const href = useMemo(() => {
     if (url) {

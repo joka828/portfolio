@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
+import Image from 'next/future/image'
 import Link from 'next/link';
 
 import { openProjectDetailTracking } from '../../helpers/trackings';
@@ -21,7 +21,7 @@ const HomeProjects: NextPage = () => {
               Portfolio
             </span>
             <div className={styles.sectionContent}>
-              <Image className={styles.projectImage} src="/portfolio-image.png" alt="Portfolio Image" layout="raw" width={339} height={150} />
+              <Image className={styles.projectImage} src="/portfolio-image.png" alt="Portfolio Image" width={339} height={150} />
               <span className={styles.description}>
                 Yes, a meta-reference. This portfolio is developed on nextJS.{' '}
                 It features SEO management, CICD through vercel and native nextJS Server Side Rendering.
@@ -35,10 +35,10 @@ const HomeProjects: NextPage = () => {
               Mazmo Casino
             </span>
             <div className={styles.sectionContent}>
-              <Image className={styles.projectImage} src="/casino-image.png" alt="Portfolio Image" layout="raw" width={350} height={273} />
+              <Image className={styles.projectImage} src="/casino-image.png" alt="Portfolio Image" width={350} height={273} />
               <span className={styles.description}>
                 Mazmo is a social network which has an internal currency.
-                I made a casino that integrates with its chat-webhooks and iframe to provide a really homogeneous experience, 
+                I made a casino that integrates with its chat-webhooks and iframe to provide a really homogeneous experience,
                 like if it was a feature of mazmo itself.
                 <br />
                 The frontend is developed on reactJS and the server is running on nodeJS.
@@ -52,7 +52,7 @@ const HomeProjects: NextPage = () => {
               Automatic sprinklers
             </span>
             <div className={styles.sectionContent}>
-              <Image className={styles.projectImage} src="/sprinklers-image.png" alt="Portfolio Image" layout="raw" width={348} height={150} />
+              <Image className={styles.projectImage} src="/sprinklers-image.png" alt="Portfolio Image" width={348} height={150} />
               <span className={styles.description}>
                 This app, developed on vueJS and nodeJS, is an IoT project which I use to water my lawn automatically.{' '}
                 It features Google-SSO, SocketIO to connect from a cloud server to the raspberry at home and cron jobs to turn on the sprinklers.
