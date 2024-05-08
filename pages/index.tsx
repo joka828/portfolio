@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { useMemo } from "react";
 import Head from "next/head";
-import Image from "next/future/image";
+import Image from "next/image";
 
 import { capitalize } from "../helpers";
 import { linkedinLinkTracking, githubLinkTracking } from "../helpers/trackings";
@@ -20,10 +20,12 @@ export const getStaticProps = async () => {
     {
       method: "GET",
       headers: { Authorization: `token ${process.env.GITHUB_ACCESS_TOKEN}` },
-    },
+    }
   );
 
-  const lastCommit = (await lastCommitFetch.json()).commit;
+  const lastCommitJson = await lastCommitFetch.json();
+
+  const lastCommit = lastCommitJson.commit;
 
   return {
     props: {
