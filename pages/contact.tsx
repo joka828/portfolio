@@ -1,7 +1,7 @@
-import type { NextPage } from 'next'
+import type { NextPage } from "next";
 
-import { downloadCVTracking } from '../helpers/trackings';
-import styles from '../styles/Contact.module.css'
+import { downloadCVTracking } from "../helpers/trackings";
+import styles from "../styles/Contact.module.css";
 
 const Contact: NextPage = () => {
   return (
@@ -17,19 +17,24 @@ const Contact: NextPage = () => {
 
       <main className={styles.main}>
         <div className={styles.section}>
-          <span>Reach to me at <b>joaquin.candalaft@gmail.com</b></span>
+          <span>
+            Reach to me at <b>joaquin.candalaft@gmail.com</b>
+          </span>
         </div>
         <div className={styles.section}>
-          You can also{' '}
-          <a href="/resume.pdf" target="_blank" rel="noreferrer" onClick={downloadCVTracking}>
-            <b className={styles.resumeLink}>
-              download my resume!
-            </b>
+          You can also{" "}
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            onClick={downloadCVTracking}
+          >
+            <b className={styles.resumeLink}>download my resume!</b>
           </a>
         </div>
       </main>
     </>
-  )
+  );
 };
 
 export default Contact;

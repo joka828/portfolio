@@ -1,7 +1,7 @@
-import type { NextPage } from 'next'
+import type { NextPage } from "next";
 
-import { downloadCVTracking } from '../../helpers/trackings';
-import styles from '../../styles/Work.module.css'
+import { downloadCVTracking } from "../../helpers/trackings";
+import styles from "../../styles/Work.module.css";
 
 const Work: NextPage = () => {
   return (
@@ -16,21 +16,22 @@ const Work: NextPage = () => {
       </Head> */}
 
       <main className={styles.main}>
-        <span>
-          Coming soon!
-        </span>
+        <span>Coming soon!</span>
         <br />
         <div>
-          You can also{' '}
-          <a href="/resume.pdf" target="_blank" rel="noreferrer" onClick={downloadCVTracking}>
-            <b className={styles.resumeLink}>
-              download my resume!
-            </b>
+          You can also{" "}
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noreferrer"
+            onClick={downloadCVTracking}
+          >
+            <b className={styles.resumeLink}>download my resume!</b>
           </a>
         </div>
       </main>
     </>
-  )
+  );
 };
 
 export default Work;

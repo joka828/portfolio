@@ -1,53 +1,52 @@
-import type { NextPage } from 'next'
-import { useMemo } from 'react'
-import Head from 'next/head'
-import Image from 'next/future/image'
+import type { NextPage } from "next";
+import { useMemo } from "react";
+import Head from "next/head";
+import Image from "next/future/image";
 
-import { capitalize } from '../helpers'
-import { linkedinLinkTracking, githubLinkTracking } from '../helpers/trackings'
-import styles from '../styles/Dashboard.module.css'
+import { capitalize } from "../helpers";
+import { linkedinLinkTracking, githubLinkTracking } from "../helpers/trackings";
+import styles from "../styles/Dashboard.module.css";
 
 interface Props {
   lastCommit: {
     date: Date;
     message: string;
-  }
-};
+  };
+}
 
 export const getStaticProps = async () => {
   const lastCommitFetch = await fetch(
-    'https://api.github.com/repos/joka828/portfolio/commits/master',
+    "https://api.github.com/repos/joka828/portfolio/commits/master",
     {
-      method: 'GET',
-      headers: { "Authorization": `token ${process.env.GITHUB_ACCESS_TOKEN}` }
-    }
+      method: "GET",
+      headers: { Authorization: `token ${process.env.GITHUB_ACCESS_TOKEN}` },
+    },
   );
 
-  const lastCommit = (await lastCommitFetch.json()).commit
+  const lastCommit = (await lastCommitFetch.json()).commit;
 
   return {
     props: {
       lastCommit: {
         date: lastCommit.committer.date,
         message: lastCommit.message,
-      }
+      },
     },
   };
-}
+};
 
 const Dashboard: NextPage<Props> = ({ lastCommit }) => {
-
   const parsedDate = useMemo(() => {
     const date = new Date(lastCommit.date);
-    const month = date.toLocaleString('default', { month: 'short' });
-    return `${date.getDate()}-${month}-${date.getFullYear()}`
+    const month = date.toLocaleString("default", { month: "short" });
+    return `${date.getDate()}-${month}-${date.getFullYear()}`;
   }, [lastCommit]);
 
   return (
     <>
       <Head>
         <title>Joaquin Candalaft&apos;s portfolio</title>
-        <meta name="description" content="Joaquin Candalaft&apos;s portfolio" />
+        <meta name="description" content="Joaquin Candalaft's portfolio" />
       </Head>
 
       <main className={styles.main}>
@@ -60,12 +59,20 @@ const Dashboard: NextPage<Props> = ({ lastCommit }) => {
 
           {/* Only displayed on mobile */}
           <div className={styles.avatarWrapper}>
-            <Image className={styles.avatar} src="/avatar.jpg" alt="Joaquin&apos;s photo" width={150} height={150} />
+            <Image
+              className={styles.avatar}
+              src="/avatar.jpg"
+              alt="Joaquin's photo"
+              width={150}
+              height={150}
+            />
           </div>
           {/* Only displayed on mobile */}
 
           <p className={styles.description}>
-            I&apos;m a fullstack web developer. I&apos;ve been involved in projects with lots of technologies both for work and personal purposes.
+            I&apos;m a fullstack web developer. I&apos;ve been involved in
+            projects with lots of technologies both for work and personal
+            purposes.
           </p>
 
           <div className={styles.socials}>
@@ -77,7 +84,13 @@ const Dashboard: NextPage<Props> = ({ lastCommit }) => {
               rel="noreferrer"
             >
               LinkedIn
-              <Image className={styles.icon} src="/linkedin.png" alt="Linkedin logo" width={20} height={20} />
+              <Image
+                className={styles.icon}
+                src="/linkedin.png"
+                alt="Linkedin logo"
+                width={20}
+                height={20}
+              />
             </a>
             <a
               onClick={githubLinkTracking}
@@ -87,14 +100,26 @@ const Dashboard: NextPage<Props> = ({ lastCommit }) => {
               rel="noreferrer"
             >
               Github
-              <Image className={styles.icon} src="/github-icon.png" alt="Github logo" width={20} height={20} />
+              <Image
+                className={styles.icon}
+                src="/github-icon.png"
+                alt="Github logo"
+                width={20}
+                height={20}
+              />
             </a>
           </div>
         </div>
 
         {/* Only displayed on desktop */}
         <div className={styles.rightColumn}>
-          <Image className={styles.avatar} src="/avatar.jpg" alt="Joaquin&apos;s photo" width={400} height={400} />
+          <Image
+            className={styles.avatar}
+            src="/avatar.jpg"
+            alt="Joaquin's photo"
+            width={400}
+            height={400}
+          />
         </div>
         {/* Only displayed on desktop */}
 
@@ -105,7 +130,7 @@ const Dashboard: NextPage<Props> = ({ lastCommit }) => {
         </span>
       </main>
     </>
-  )
+  );
 };
 
 export default Dashboard;
