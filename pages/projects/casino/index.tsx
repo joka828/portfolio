@@ -20,7 +20,7 @@ const Casino: NextPage = () => {
           className={styles.backButton}
         />
         <Link href="/projects/casino/demo">
-          <span className={styles.demoButton}>Demo</span>
+          <span className={styles.demoButton}>See Live Demo!</span>
         </Link>
         <span className={styles.title}>Mazmo Casino</span>
 

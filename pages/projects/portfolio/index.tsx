@@ -23,7 +23,7 @@ const Portfolio: NextPage = () => {
           className={styles.backButton}
         />
         <Link href="/">
-          <span className={styles.demoButton}>Demo</span>
+          <span className={styles.demoButton}>See Live Demo!</span>
         </Link>
         <span className={styles.title}>My Portfolio</span>
         <div className={styles.content}>
