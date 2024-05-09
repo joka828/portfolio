@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import ContentCopyOutlinedIcon from "@mui/icons-material/ContentCopyOutlined";
 
-import { downloadCVTracking } from "../helpers/trackings";
+import { copyEmailTracking, downloadCVTracking } from "../helpers/trackings";
 import styles from "../styles/Contact.module.css";
 import { Tooltip } from "@mui/material";
 import toast from "react-hot-toast";
@@ -19,6 +19,7 @@ const Contact: NextPage = () => {
               className={styles.emailText}
               onClick={() => {
                 navigator.clipboard.writeText(email);
+                copyEmailTracking();
                 toast.success("Email copied to clipboard!");
               }}
             >

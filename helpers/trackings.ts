@@ -53,6 +53,12 @@ export const downloadCVTracking = () => {
   });
 };
 
+export const copyEmailTracking = () => {
+  amplitudeTracking({
+    event_type: "copy_email",
+  });
+};
+
 export const initiliazeUserId = () => {
   if (typeof window !== "undefined") {
     const userId = window.localStorage.getItem("userId");
