@@ -9,32 +9,50 @@ import styles from "../styles/Dashboard.module.css";
 
 interface Props {
   lastCommit: {
-    date: Date;
+    date: string;
     message: string;
+    error?: boolean;
   };
 }
 
-export const getStaticProps = async () => {
-  const lastCommitFetch = await fetch(
-    "https://api.github.com/repos/joka828/portfolio/commits/master",
-    {
-      method: "GET",
-      headers: { Authorization: `token ${process.env.GITHUB_ACCESS_TOKEN}` },
-    }
-  );
+export const getStaticProps = async (): Promise<{ props: Props }> => {
+  try {
+    const lastCommitFetch = await fetch(
+      "https://api.github.com/repos/joka828/portfolio/commits/master",
+      {
+        method: "GET",
+        headers: { Authorization: `token ${process.env.GITHUB_ACCESS_TOKEN}` },
+      }
+    );
 
-  const lastCommitJson = await lastCommitFetch.json();
+    const lastCommitJson = await lastCommitFetch.json();
 
-  const lastCommit = lastCommitJson.commit;
+    const lastCommit = lastCommitJson.commit;
 
-  return {
-    props: {
-      lastCommit: {
-        date: lastCommit.committer.date,
-        message: lastCommit.message,
+    return {
+      props: {
+        lastCommit: {
+          date: lastCommit.committer.date,
+          message: lastCommit.message,
+        },
       },
-    },
-  };
+    };
+  } catch (error) {
+    console.error(error);
+    console.error(
+      "Failed to fetch last commit, check if the GITHUB_ACCESS_TOKEN is set correctly"
+    );
+
+    return {
+      props: {
+        lastCommit: {
+          date: new Date().toISOString(),
+          message: "Failed to fetch last commit, fixing it soon!",
+          error: true,
+        },
+      },
+    };
+  }
 };
 
 const Dashboard: NextPage<Props> = ({ lastCommit }) => {
@@ -128,7 +146,9 @@ const Dashboard: NextPage<Props> = ({ lastCommit }) => {
         <span className={styles.wipDisclaimer}>
           This portfolio is a work in progress. More coming soon!
           <br />
-          Last update on {parsedDate}: {capitalize(lastCommit.message)}
+          {lastCommit.error
+            ? lastCommit.message
+            : `Last update on ${parsedDate}: ${capitalize(lastCommit.message)}`}
         </span>
       </main>
     </>

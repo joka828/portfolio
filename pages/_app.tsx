@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Head from "next/head";
 import { useEffect } from "react";
+import { Toaster } from "react-hot-toast";
 
 import { visitTracking, initiliazeUserId } from "../helpers/trackings";
 import styles from "../styles/Layout.module.css";
@@ -52,7 +53,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <Toaster position="bottom-center" />
       <div className={styles.layoutWrapper}>
         <div className={styles.layout}>
           {/* TO DO: make the topbar actually responsive (maybe a burger) */}
@@ -60,7 +61,9 @@ function MyApp({ Component, pageProps }: AppProps) {
             {TOPBAR_ITEMS.map((item) => (
               <Link key={item.path} href={`/${item.path}`}>
                 <span
-                  className={`${styles.topbarItem} ${firstPathParameter === item.path ? styles.highlighted : ""}`}
+                  className={`${styles.topbarItem} ${
+                    firstPathParameter === item.path ? styles.highlighted : ""
+                  }`}
                 >
                   {item.text}
                   <div className={styles.underlineWrapper}>
@@ -74,7 +77,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         </div>
         <div className={`${styles.backgroundDecoratorWrapper}`}>
           <div
-            className={`${styles.backgroundDecorator} ${firstPathParameter ? styles.leftSideBackgroundDecorator : styles.rightSideBackgroundDecorator}`}
+            className={`${styles.backgroundDecorator} ${
+              firstPathParameter
+                ? styles.leftSideBackgroundDecorator
+                : styles.rightSideBackgroundDecorator
+            }`}
           />
         </div>
       </div>

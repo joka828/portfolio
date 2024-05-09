@@ -13,3 +13,16 @@
 .resumeLink {
   text-decoration: underline;
 }
+
+.contactText {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  .emailText {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 0.25rem;
+  }
+}
