@@ -38,6 +38,10 @@
   flex-shrink: 2;
 }
 
+.resumeLink {
+  text-decoration: underline;
+}
+
 .socials {
   display: flex;
   flex-direction: row;

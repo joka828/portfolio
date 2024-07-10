@@ -4,7 +4,11 @@ import Head from "next/head";
 import Image from "next/image";
 
 import { capitalize } from "../helpers";
-import { linkedinLinkTracking, githubLinkTracking } from "../helpers/trackings";
+import {
+  linkedinLinkTracking,
+  githubLinkTracking,
+  downloadCVTracking,
+} from "../helpers/trackings";
 import styles from "../styles/Dashboard.module.css";
 
 interface Props {
@@ -90,9 +94,22 @@ const Dashboard: NextPage<Props> = ({ lastCommit }) => {
           {/* Only displayed on mobile */}
 
           <p className={styles.description}>
-            I&apos;m a fullstack web developer. I&apos;ve been involved in
+            I&apos;m a Sr. Fullstack web developer. I&apos;ve been involved in
             projects with lots of technologies both for work and personal
             purposes.
+          </p>
+
+          <p className={styles.description}>
+            I am currently looking for new opportunities. Feel free to{" "}
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              onClick={downloadCVTracking}
+            >
+              <b className={styles.resumeLink}>download my resume</b>
+            </a>{" "}
+            and reach out to me!
           </p>
 
           <div className={styles.socials}>
