@@ -38,15 +38,26 @@
   background-color: #333;
 }
 
+.companyWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+
+  flex-shrink: 0;
+  width: 16rem;
+}
+
+.companyIcon {
+  font-size: 2rem;
+}
+
 .titleColumn {
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   gap: 0.3rem;
-
-  flex-shrink: 0;
-  width: 12rem;
 }
 
 .title {
@@ -54,7 +65,7 @@
   font-weight: 600;
 }
 
-@media screen and (max-width: 1024px), screen and (max-height: 700px) {
+@media screen and (max-width: 1024px) {
   .section {
     flex-direction: column;
     align-items: center;
@@ -63,8 +74,13 @@
     gap: 1rem;
   }
 
-  .titleColumn {
-    align-items: center;
+  .companyWrapper {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .companyIcon {
+    display: none;
   }
 }
 

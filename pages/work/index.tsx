@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
+import BusinessIcon from "@mui/icons-material/Business";
+
 import { downloadCVTracking } from "../../helpers/trackings";
 import styles from "../../styles/Work.module.css";
 
@@ -29,10 +31,13 @@ const Work: NextPage = () => {
         </div>
         <div className={styles.content}>
           <div className={styles.section}>
-            <div className={styles.titleColumn}>
-              <h3 className={styles.title}>Mercado Libre</h3>
-              <span>11/2017 - 08/2018</span>
-              <span>Front-end web developer</span>
+            <div className={styles.companyWrapper}>
+              <BusinessIcon className={styles.companyIcon} />
+              <div className={styles.titleColumn}>
+                <h3 className={styles.title}>Mercado Libre</h3>
+                <span>11/2017 - 08/2018</span>
+                <span>Front-end web developer</span>
+              </div>
             </div>
             <span className={styles.sectionText}>
               At Mercado Libre I was first in charge of maintaining a React
@@ -50,10 +55,13 @@ const Work: NextPage = () => {
             </span>
           </div>
           <div className={styles.section}>
-            <div className={styles.titleColumn}>
-              <h3 className={styles.title}>Elementum</h3>
-              <span>09/2018 - 07/2019</span>
-              <span>Software Engineer</span>
+            <div className={styles.companyWrapper}>
+              <BusinessIcon className={styles.companyIcon} />
+              <div className={styles.titleColumn}>
+                <h3 className={styles.title}>Elementum</h3>
+                <span>09/2018 - 07/2019</span>
+                <span>Software Engineer</span>
+              </div>
             </div>
             <span className={styles.sectionText}>
               In Elementum I was part of the team that developed the new
@@ -69,10 +77,13 @@ const Work: NextPage = () => {
             </span>
           </div>
           <div className={styles.section}>
-            <div className={styles.titleColumn}>
-              <h3 className={styles.title}>Mural</h3>
-              <span>08/2019 - 08/2021</span>
-              <span>Full Stack Engineer</span>
+            <div className={styles.companyWrapper}>
+              <BusinessIcon className={styles.companyIcon} />
+              <div className={styles.titleColumn}>
+                <h3 className={styles.title}>Mural</h3>
+                <span>08/2019 - 08/2021</span>
+                <span>Full Stack Engineer</span>
+              </div>
             </div>
             <span className={styles.sectionText}>
               Mural was a really challenging experience for me as a frontender,
@@ -94,10 +105,13 @@ const Work: NextPage = () => {
             </span>
           </div>
           <div className={styles.section}>
-            <div className={styles.titleColumn}>
-              <h3 className={styles.title}>Kavak</h3>
-              <span>08/2021 - 09/2022</span>
-              <span>Senior Software Engineer</span>
+            <div className={styles.companyWrapper}>
+              <BusinessIcon className={styles.companyIcon} />
+              <div className={styles.titleColumn}>
+                <h3 className={styles.title}>Kavak</h3>
+                <span>08/2021 - 09/2022</span>
+                <span>Senior Software Engineer</span>
+              </div>
             </div>
             <span className={styles.sectionText}>
               Kavak was a particular challenge for me, since I have almost
@@ -106,7 +120,7 @@ const Work: NextPage = () => {
               used to it, but as soon as I caught up with it, I was able to
               develop a lot of features and make a real impact on the frontend
               teams.
-              <br />I was part of the team that changed a lot of frontend
+              <br />I was part of a team that changed a lot of frontend
               workflows and even changing the way product and design teams
               worked with the frontend teams. I was able to improve and refactor
               core features in the Angular application to improve performance
@@ -118,10 +132,13 @@ const Work: NextPage = () => {
             </span>
           </div>
           <div className={styles.section}>
-            <div className={styles.titleColumn}>
-              <h3 className={styles.title}>Pauca</h3>
-              <span>11/2022 - 05/2024</span>
-              <span>Senior Software Engineer</span>
+            <div className={styles.companyWrapper}>
+              <BusinessIcon className={styles.companyIcon} />
+              <div className={styles.titleColumn}>
+                <h3 className={styles.title}>Pauca</h3>
+                <span>11/2022 - 05/2024</span>
+                <span>Senior Software Engineer</span>
+              </div>
             </div>
             <span className={styles.sectionText}>
               Pauca was my first experience working with a small team in a
