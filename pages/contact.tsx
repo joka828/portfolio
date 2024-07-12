@@ -18,7 +18,7 @@ const Contact: NextPage = () => {
       <main className={styles.main}>
         <div className={styles.section}>
           <span className={styles.contactText}>
-            Reach to me at
+            Reach out to me at
             <Tooltip title="Copy email">
               <b
                 className={styles.emailText}
