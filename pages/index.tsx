@@ -102,7 +102,7 @@ const Dashboard: NextPage<Props> = ({ lastCommit }) => {
           <p className={styles.description}>
             I am currently looking for new opportunities. Feel free to{" "}
             <a
-              href="/resume.pdf"
+              href="/resume"
               target="_blank"
               rel="noreferrer"
               onClick={downloadCVTracking}

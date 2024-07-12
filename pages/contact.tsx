@@ -36,7 +36,7 @@ const Contact: NextPage = () => {
         <div className={styles.section}>
           You can also{" "}
           <a
-            href="/resume.pdf"
+            href="/resume"
             target="_blank"
             rel="noreferrer"
             onClick={downloadCVTracking}

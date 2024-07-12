@@ -21,7 +21,7 @@ const Work: NextPage = () => {
         <div>
           You can also{" "}
           <a
-            href="/resume.pdf"
+            href="/resume"
             target="_blank"
             rel="noreferrer"
             onClick={downloadCVTracking}
