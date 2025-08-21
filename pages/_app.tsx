@@ -23,6 +23,11 @@ const TOPBAR_ITEMS = [
     path: "projects",
   },
   {
+    text: "Resume",
+    path: "resume",
+    target: "_blank",
+  },
+  {
     text: "Contact me!",
     path: "contact",
   },
@@ -59,11 +64,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           {/* TO DO: make the topbar actually responsive (maybe a burger) */}
           <div className={styles.topbar}>
             {TOPBAR_ITEMS.map((item) => (
-              <Link key={item.path} href={`/${item.path}`}>
+              <Link key={item.path} href={`/${item.path}`} target={item.target} rel="noreferrer">
                 <span
-                  className={`${styles.topbarItem} ${
-                    firstPathParameter === item.path ? styles.highlighted : ""
-                  }`}
+                  className={`${styles.topbarItem} ${firstPathParameter === item.path ? styles.highlighted : ""
+                    }`}
                 >
                   {item.text}
                   <div className={styles.underlineWrapper}>
@@ -77,11 +81,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         </div>
         <div className={`${styles.backgroundDecoratorWrapper}`}>
           <div
-            className={`${styles.backgroundDecorator} ${
-              firstPathParameter
-                ? styles.leftSideBackgroundDecorator
-                : styles.rightSideBackgroundDecorator
-            }`}
+            className={`${styles.backgroundDecorator} ${firstPathParameter
+              ? styles.leftSideBackgroundDecorator
+              : styles.rightSideBackgroundDecorator
+              }`}
           />
         </div>
       </div>
