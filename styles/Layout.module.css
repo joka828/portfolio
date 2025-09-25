@@ -32,6 +32,8 @@
   margin: 0 1rem;
   position: relative;
   flex-shrink: 0;
+  display: flex;
+  text-align: center;
 }
 
 .topbarItem.highlighted {
@@ -118,7 +120,7 @@
   }
 
   .layout main {
-    padding-top: 1rem;
+    padding: 1rem;
   }
 
   .topbarItem {
