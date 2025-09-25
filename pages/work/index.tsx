@@ -100,7 +100,7 @@ const Work: NextPage = () => {
               great solutions thanks to the collaboration with them.
               <br />
               <br />
-              Technologies I worked with: ReactJS, NodeJS, Express, MongoDB,
+              Technologies I worked with: ReactJS, Typescript, Javascript, NodeJS, Express, MongoDB,
               Docker.
             </span>
           </div>
@@ -127,7 +127,7 @@ const Work: NextPage = () => {
               and developer experience.
               <br />
               <br />
-              Technologies I worked with: Angular, NodeJS, Express, postgreSQL,
+              Technologies I worked with: Angular, Typescript, Javascript, NodeJS, Express, postgreSQL,
               I18N, SEO management.
             </span>
           </div>
@@ -156,8 +156,30 @@ const Work: NextPage = () => {
               understand its full flow to deploy many services and workers.
               <br />
               <br />
-              Technologies I worked with: ReactJS, NextJS, RemixJS, Material UI,
+              Technologies I worked with: ReactJS, NextJS, Typescript, Javascript, RemixJS, Material UI,
               Tailwind, Python, FastAPI, Docker.
+            </span>
+          </div>
+          <div className={styles.section}>
+            <div className={styles.companyWrapper}>
+              <BusinessIcon className={styles.companyIcon} />
+              <div className={styles.titleColumn}>
+                <h3 className={styles.title}>Dialpad</h3>
+                <span>10/2024 - Present</span>
+                <span>Software Engineer</span>
+              </div>
+            </div>
+            <span className={styles.sectionText}>
+              In Dialpad I am working as a software engineer in the &quot;web clients
+              framework&quot; team, which is in charge of developing the tools to migrate
+              from a monolithic web application to a microfrontends architecture.
+              <br />I am currently working on making the tooling to generate new
+              repositories to distribute the microfrontends. The code generation,
+              templating, app deployments, package publishing and all the CI/CD
+              involved in making that possible.
+              <br />
+              <br />
+              Technologies I worked with: vueJS, Typescript, Javascript, Github actions.
             </span>
           </div>
         </div>
