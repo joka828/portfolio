@@ -165,15 +165,15 @@ const Work: NextPage = () => {
               <BusinessIcon className={styles.companyIcon} />
               <div className={styles.titleColumn}>
                 <h3 className={styles.title}>Dialpad</h3>
-                <span>10/2024 - Present</span>
+                <span>10/2024 - 01/2026</span>
                 <span>Software Engineer</span>
               </div>
             </div>
             <span className={styles.sectionText}>
-              In Dialpad I am working as a software engineer in the &quot;web clients
+              In Dialpad I worked as a software engineer in the &quot;web clients
               framework&quot; team, which is in charge of developing the tools to migrate
               from a monolithic web application to a microfrontends architecture.
-              <br />I am currently working on making the tooling to generate new
+              <br />I worked on making the tooling to generate new
               repositories to distribute the microfrontends. The code generation,
               templating, app deployments, package publishing and all the CI/CD
               involved in making that possible.
