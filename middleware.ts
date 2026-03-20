@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 export function middleware(request: NextRequest) {
   return NextResponse.redirect(
-    new URL("/resume-joaquin-candalaft.pdf", request.url)
+    new URL("/joaquin-candalaft-resume.pdf", request.url)
   );
 }
 
